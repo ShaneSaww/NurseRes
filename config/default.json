@@ -1,0 +1,21 @@
+{
+    "server": {
+        "port":        8080,
+        "forks":        1,
+        "siteUrl":      "http://localhost:8080"
+    },
+    "dbMysql": {
+		"host"     : "",
+		"database" : "",
+		"user"     : "",
+		"password" : "",
+		"connectionLimit" : 10,
+		"waitForConnections" : true 
+    },
+	"Twitter": {
+		"consumer_key" : "",
+		"consumer_secret" : "",
+		"access_token_key" : "-",
+		"access_token_secret" : ""
+	}
+}
