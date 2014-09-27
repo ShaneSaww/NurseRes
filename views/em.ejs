@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+		<title>NurseGrid Resources Editing</title>
+<head>
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	 padding: 15px;
+}
+th, td {
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<table id="t01">
+<caption>Monthly Blogs</caption>
+<th>Link</th>
+<th>DisplayLink</th>
+<th>Description</th>
+<th>isDisplayed</th>
+<th>Rank</th>
+<th>PicLink</th>
+  <tr>
+	<% for( var i = 0; i<Brows.length; i++) {%>
+	<td><%= Brows[i].Link %></td>
+	<td><%= Brows[i].DisplayLink %></td>
+	<td><%= Brows[i].Description  %></td>
+	<td><%= Brows[i].isDisplayed  %></td>
+	<td><%= Brows[i].Rank  %></td>
+	<td><img src='<%= Brows[i].PicLink %>'  width="50" height="50"  class="img-circle pull-right"> </td>
+	<td> 
+		<a class="a-inside edit" href="../em/edit/<%=Brows[i].Id%>">Edit</a>
+                       
+        <a class="a-inside delete" href="../em/delete/<%=Brows[i].Id%>">Delete</a>
+	</td>
+	</tr>
+	<% } %>
+</table>
+<br>
+<table id="t01">
+<caption>Top Educational Resources & Forums</caption>
+<th>Link</th>
+<th>DisplayLink</th>
+<th>Description</th>
+<th>isDisplayed</th>
+<th>Rank</th>
+<th>PicLink</th>
+  <tr>
+	<% for( var i = 0; i<Erow.length; i++) {%>
+	<td><%= Erow[i].Link %></td>
+	<td><%= Erow[i].DisplayLink %></td>
+	<td><%= Erow[i].Description  %></td>
+	<td><%= Erow[i].isDisplayed %></td>
+	<td><%= Erow[i].Rank  %></td>
+	<td><img src='<%= Erow[i].PicLink %>'  width="50" height="50"  class="img-circle pull-right"> </td>
+		<td> 
+		<a class="a-inside edit" href="../em/edit/<%=Erow[i].Id%>">Edit</a>
+                       
+        <a class="a-inside delete" href="../em/delete/<%=Erow[i].Id%>">Delete</a>
+	</td>
+	</tr>
+	<% } %>
+</table>
+<br>
+<table id="t01">
+<caption>Nurse of the Months</caption>
+<th>Link</th>
+<th>DisplayLink</th>
+<th>Description</th>
+<th>isDisplayed</th>
+<th>Rank</th>
+<th>PicLink</th>
+  <tr>
+	<% for( var i = 0; i<Prow.length; i++) {%>
+	<td><%= Prow[i].Link %> </td>
+	<td><%= Prow[i].DisplayLink %></td>
+	<td><%= Prow[i].Description  %></td>
+	<td><%= Prow[i].isDisplayed  %></td>
+	<td><%= Prow[i].Rank  %></td>
+	<td><img src='<%= Prow[i].PicLink %>'  width="150" height="150"  class="img-circle pull-right">
+		<td> 
+		<a class="a-inside edit" href="../em/edit/<%=Prow[i].Id%>">Edit</a>
+                       
+        <a class="a-inside delete" href="../em/delete/<%=Prow[i].Id%>">Delete</a>
+	</td>
+	</tr>
+	<% } %>
+</table>
+<br>
+<table id="t01">
+<caption>Top Article</caption>
+<th>Link</th>
+<th>DisplayLink</th>
+<th>Description</th>
+<th>isDisplayed</th>
+<th>Rank</th>
+<th>PicLink</th>
+  <tr>
+	<% for( var i = 0; i<Arow.length; i++) {%>
+	<td><%= Arow[i].Link %></td>
+	<td><%= Arow[i].DisplayLink %></td>
+	<td><%= Arow[i].Description  %></td>
+	<td><%= Arow[i].isDisplayed  %></td>
+	<td><%= Arow[i].Rank  %></td>
+	<td><img src='<%= Arow[i].PicLink %>'  width="50" height="50"  class="img-circle pull-right"> </td>
+		<td> 
+		<a class="a-inside edit" href="../em/edit/<%=Arow[i].Id%>">Edit</a>
+                       
+        <a class="a-inside delete" href="../em/delete/<%=Arow[i].Id%>">Delete</a>
+	</td>
+	</tr>
+	<% } %>
+</table>
+
+
+</body>
+</html>

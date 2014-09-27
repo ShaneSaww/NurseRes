@@ -1,0 +1,37 @@
+        <div class="page-data">
+            
+            <form method="post" action="/em/edit/<%=row[0].Id%>">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Link</td><td>: <textarea type="text" name="Link"  required maxlength="255"><%=row[0].Link%> </textarea></td>
+                 </tr>
+                 <tr>
+                    <td class="label" valign="top">DisplayLink</td><td valign="top">: <textarea name="DisplayLink"   required maxlength="50"><%=row[0].DisplayLink%></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label">Description</td><td>: <textarea type="text" name="Description"  maxlength="150"   required><%=row[0].Description%></textarea></td>
+                 </tr>
+                  <tr>
+                    <td class="label">Type</td><td>: <input type="text" name="Type"  maxlength="10" value="<%=row[0].Type%>"  required></td>
+                 </tr>
+				    <tr>
+                    <td class="label">isDisplayed</td><td>: <input type="Radio" name="isDisplayed"  maxlength="5" ></td>
+                 </tr>
+					<tr>
+                    <td class="label">Rank</td><td>: <input type="text" name="Rank"  maxlength="11" value="<%=row[0].Rank%>"  ></td>
+                 </tr>
+				      <tr>
+                    <td class="label">PicLink</td><td>: <textarea type="text" name="PicLink"  maxlength="255"   ><%=row[0].PicLink%></textarea></td>
+                 </tr>
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                         <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
