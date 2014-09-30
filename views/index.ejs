@@ -6,11 +6,12 @@
 		<title>NurseGrid | Resources for Nurses</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="public/images/nursegrid-nurse-schedule-favicon.ico">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="public/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
@@ -23,7 +24,7 @@
             <span class="icon-bar"></span>
           </button>
           <a href="index.html" class="navbar-brand">
-            <img src="images/nursegrid-nurse-communication-app-logo.png" alt="nursegrid nurse communication app logo">
+            <img src="public/images/nursegrid-nurse-communication-app-logo.png" alt="nursegrid nurse communication app logo">
           </a>
         </div>
 
@@ -33,22 +34,22 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="nurses.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'NursesPageLink', 'eventAction': 'ClickNursesPageLink', 'eventLabel': 'HomePgNavNurses' });">For Nurses</a>
+                        <a href="nurses.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'NursesPageLink', 'eventAction': 'ClickNursesPageLink', 'eventLabel': 'ResourcesNavNurses' });">For Nurses</a>
                     </li>                 
                     <li>
-                        <a href="http://blog.nursegrid.com" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'BlogLink', 'eventAction': 'ClickBlogLink', 'eventLabel': 'HomePgNavBlog' });">Blog</a>
+                        <a href="http://blog.nursegrid.com" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'BlogLink', 'eventAction': 'ClickBlogLink', 'eventLabel': 'ResourcesNavBlog' });">Blog</a>
                     </li>
                       <li>
-                        <a href="contact.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'ContactLink', 'eventAction': 'ClickContactLink', 'eventLabel': 'HomePgNavContact' });">Contact</a>
+                        <a href="contact.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'ContactLink', 'eventAction': 'ClickContactLink', 'eventLabel': 'ResourcesNavContact' });">Contact</a>
                     </li>
                     <li>
-                        <a href="http://support.nursegrid.com" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'SupportLink', 'eventAction': 'ClickSupportLink', 'eventLabel': 'HomePgNavSupport' });">Support</a>
+                        <a href="http://support.nursegrid.com" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'SupportLink', 'eventAction': 'ClickSupportLink', 'eventLabel': 'ResourcesNavSupport' });">Support</a>
                     </li>
                     <li class="sign-btn">
-                        <a href="http://app.nursegrid.com/signup.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'RegisterLink', 'eventAction': 'ClickRegisterLink', 'eventLabel': 'HomePgNavRegister' });">Sign up</a>
+                        <a href="http://app.nursegrid.com/signup.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'RegisterLink', 'eventAction': 'ClickRegisterLink', 'eventLabel': 'ResourcesNavRegister' });">Sign up</a>
                     </li>
                     <li class="sign-btn">
-                        <a href="http://app.nursegrid.com/login.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'LoginLink', 'eventAction': 'ClickLoginLink', 'eventLabel': 'HomePgNavLogin' });">Sign in</a>
+                        <a href="http://app.nursegrid.com/login.html" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'LoginLink', 'eventAction': 'ClickLoginLink', 'eventLabel': 'ResourcesNavLogin' });">Sign in</a>
                     </li>
                 </ul>
             </div>
@@ -59,9 +60,12 @@
 <!--main-->
 <div class="container" id="main">
    <div class="row">
+    <div class="col-xs-12 text-center"><h1>The Best of Nursing on the Web</h1><hr></div>
+   </div>
+   <div class="row">
    <div class="col-md-4 col-sm-6">
         <div class="panel panel-default">
-          <div class="panel-heading"><h4>Top 5 Blogs of the Months</h4></div>
+          <div class="panel-heading"><h4><b>Top 5 Blogs of the Month</b></h4></div>
    			<div class="panel-body">
               <div class="list-group">
                 <p><img src='<%= Brows[0].PicLink %>' class="img-circle pull-right"> <a href="#"><%= Brows[0].DisplayLink %></a><br><%= Brows[0].Description  %></p>
@@ -77,14 +81,14 @@
    		</div>
         <div class="well"> 
              <form class="form-horizontal" role="form">
-              <h4>Nurse of the Month</h4>
+              <h4><b>Nurse of the Month</b></h4>
                <p><img src='<%= Prow[0].Link %>' class="img-circle pull-right"> <a href="#"><%= Prow[0].DisplayLink %></a><br><%= Prow[0].Description %></p>
                 <div class="clearfix"></div>              
             </form>
         </div>
      
         <div class="panel panel-default">
-           <div class="panel-heading"><h4>Upcoming Events for Nurses</h4></div>
+           <div class="panel-heading"><h4><b>Upcoming Events for Nurses</b></h4></div>
    			<div class="panel-body">
               <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">ER Booze Cruise</a>
               <div class="clearfix"></div>
@@ -100,7 +104,7 @@
       	 
           <div class="well"> 
              <form class="form">
-              <h4>Tweet of the Week</h4>
+              <h4><b>Trending on Twitter</b></h4>
               <div class="input-group text-center">
               <p><a class="twitter-timeline" href="https://twitter.com/Shane40089492/favorites" data-widget-id="515715463020412928">Favorite Tweets by @Shane40089492</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p> <br> 
@@ -109,7 +113,7 @@
           </div>
 
       	 <div class="panel panel-default">
-           <div class="panel-heading"><h4>Top Educational Resources &amp Forums</h4></div>
+           <div class="panel-heading"><h4><b>Top Educational Resources &amp Forums</b></h4></div>
    			<div class="panel-body">
               <p><img src='<%= Erow[0].PicLink %>' class="img-circle pull-right"> <a href="#"><%= Erow[0].DisplayLink %></a><br><%= Erow[0].Description  %></p>
               <div class="clearfix"></div>
@@ -125,7 +129,7 @@
          </div>
       
       	 <div class="panel panel-default">
-           <div class="panel-heading"><h4>Nurse Humor</h4></div>
+           <div class="panel-heading"><h4><b>Nurse Humor</b></h4></div>
    			<div class="panel-body">
               <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Crazy Shit Going Down Here</a><br>Click to Find Out More</p>
               <div class="clearfix"></div>
@@ -135,7 +139,7 @@
   	</div>
   	<div class="col-md-4 col-sm-6">
          <div class="panel panel-default">
-           <div class="panel-heading"><h4>Top Stories of the Week</h4></div>
+           <div class="panel-heading"><h4><b>Top Stories of the Week</b></h4></div>
    			<div class="panel-body">
               <p><img src='<%= Arow[0].PicLink %>' class="img-circle pull-right"> <a href="#"><%= Arow[0].DisplayLink %></a><br><%= Arow[0].Description  %></p>
               <div class="clearfix"></div>
@@ -151,7 +155,7 @@
 		</div>
         
         <div class="panel panel-default">
-           <div class="panel-heading"><h4>Nursing Jobs, Apply Now</h4></div>
+           <div class="panel-heading"><h4><b>Nursing Jobs, Apply Now</b></h4></div>
    			<div class="panel-body">
               <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Keyword: No Patients</a>
               <div class="clearfix"></div>
@@ -161,7 +165,7 @@
          </div>
  
         <div class="panel panel-default">
-          <div class="panel-heading"><h4>Deals for Nurses</h4></div>
+          <div class="panel-heading"><h4><b>Deals for Nurses</b></h4></div>
    			<div class="panel-body">
               <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Crazy Shit Going Down Here</a><br>Click to Find Out More</p>
               <div class="clearfix"></div><br>
@@ -174,16 +178,18 @@
       
     </div>
   </div><!--/row-->
+</div>
   
-  <hr>
+  <br><br>
 
   <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="container">
+  
+  <footer class="footer">
+    <div class="container footer-container">
       <div class="row footer-logo">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
           <a href="#">
-            <img class="img-responsive" src="images/nursegrid-nurse-manager-software-logo-white.png" alt="nursegrid nurse manager software logo white">
+            <img class="img-responsive" src="public/images/nursegrid-nurse-manager-software-logo-white.png" alt="nursegrid nurse manager software logo white">
           </a>
         </div>
 
@@ -194,62 +200,14 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Privacy Policy</h4>
                   </div>
-                <div class="modal-body">
-                  <p>This Privacy Policy governs the manner in which HcT2 Co. (DBA NurseGrid) collects, uses, maintains and discloses information collected from users (each, a "User") of the www.nursegrid.com website and any application provided by NurseGrid. ("Site"). This privacy policy applies to the Site and all products and services offered by NurseGrid.</p>
-                  <h3>Personal identification information</h3>
-                  <p>We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our Site, register on the Site, and in connection with other activities, services, features or resources we make available on our Site. Users may be asked for, as appropriate, name, email address, phone number. We will collect personal identification information from Users only if they voluntarily submit such information to us, except when there is a service integration with the existing system(s) of User's employer(s), providing such information to us through an secured channel. Users can always refuse to supply personally identifying information, except that it may prevent them from engaging in certain activities on the Site.</p>
-                  <h3>Non-personal identification information</h3>
-                  <p>We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser or device name, the type of computer or device, and technical information about Users means of connection to our Site, such as the operating system and the Internet service providers utilized and other similar information.</p>
-                  <h3>Web browser cookies</h3>
-                  <p>Our Site may use "cookies" to enhance User experience. User's web browser places cookies on their hard drive or flash memory for record-keeping purposes and sometimes to track information about them. User may choose to set their web browser to refuse cookies, or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.</p>
-                  <h3>How we use collected information</h3>
-                  <p>NurseGrid may collect and use Users personal information for the following purposes:</p>
-                  <ul class="privacy-list">
-                    <li><p>To improve customer service</p>
-                      <p>Information you provide helps us respond to your customer service requests and support needs more efficiently.</p>
-                  </li>
-                  <li><p>To personalize User experience</p>
-                      <p>We may use information in the aggregate to understand how our Users as a group use the services and resources provided on our Site.</p>
-                  </li>
-                  <li><p>To improve our Site</p>
-                      <p>We may use feedback you provide to improve our products and services.</p>
-                  </li>
-                  <li><p>To process payments</p>
-                      <p>We may use the information Users provide about themselves when placing an order only to provide service to that order. We do not share this information with outside parties except to the extent necessary to provide the service.</p>
-                  </li>
-                  <li><p>To run a promotion, contest, survey or other Site feature</p>
-                      <p>To send Users information they agreed to receive about topics we think will be of interest to them.</p>
-                  </li>
-                  <li><p>To send periodic emails</p>
-                      <p>We may use the email address to send them information and updates pertaining to their order. If User decides to opt-in to our mailing list, they will receive emails that may include company news, updates, related product or service information, etc. If at any time the User would like to unsubscribe from receiving future emails, they may do so by contacting us via our Site.</p>
-                  </li>
-                  </ul>
-
-                  <h3>How we protect your information</h3>
-                  <p>We adopt appropriate data collection, storage and processing practices and security measures to protect against unauthorized access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.</p>
-                  <p>Sensitive and private data exchange between the Site and its Users happens over a SSL secured communication channel and is encrypted and protected with digital signatures.</p>
-                  <h3>Sharing your personal information</h3>
-                  <p>We do not sell, trade, or rent Users personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates and advertisers for the purposes outlined above.</p>
-                  <h3>Compliance with the Children's Online Privacy Protection Act (COPPA)</h3>
-                  <p>Protecting the privacy of the very young is especially important. For that reason, we never collect or maintain information at our Site from those we actually know are under 13, and no part of our Site is structured to attract anyone under 13.</p>
-                  <h3>Changes to this privacy policy</h3>
-                  <p>NurseGrid has the discretion to update this privacy policy at any time. When we do, we will revise the updated date at the bottom of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</p>
-                  <h3>Your acceptance of these terms</h3>
-                  <p>By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
-                  <h3>Contacting us</h3>
-                  <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:</p>
-                  <p>NurseGrid</p>
-                <a href="index.html">www.nursegrid.com</a>
-                <p>121 SW Salmon Street 11th Floor<br/>Portland, OR 97204</p>
-                <a href="mailto:legal@nursegrid.com">legal@nursegrid.com</a>
-                  </div>
+                
               </div>
             </div>
           </div>
         </div>
       <div class="row">
         <div class="col-lg-3 copyright-text">
-          <h7>&copy; 2014 - NurseGrid</h7>
+          <h7 class="copyright-text">&copy; 2014 - NurseGrid</h7>
         </div>
 
         <div class="col-lg-4 footer-page-links">
@@ -268,7 +226,7 @@
           <h6>Social Media</h6>
           <div class="social">
             <a class="facebook" href="https://www.facebook.com/HcT2co" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'FacebookLink', 'eventAction': 'ClickFacebookLink', 'eventLabel': 'HomePgBottomNavFB' });"><i class="icon-facebook"></i></a>
-            <a class="twitter" href="https://twitter.com/HcT2Co" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'TwitterLink', 'eventAction': 'ClickTwitterLink', 'eventLabel': 'HomePgBottomNavTwit' });"><i class="icon-twitter"></i></a>
+            <a class="twitter" href="https://twitter.com/HcT2Co" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'TwitterLink', 'eventAction': 'ClickTwitterLink', 'eventLabel': 'HomePgBottomNavTwit' });"><i class="icon-twitter" href="http://www.iconsdb.com/icons/preview/white/facebook-m.png"></i></a>
             <!--<a class="pinterest" href="#"><i class="icon-pinterest"></i></a>-->
             <a class="linkedin" href="https://www.linkedin.com/company/3319590?trk=tyah&trkInfo=tarId%3A1397425214498%2Ctas%3Anursegrid%2Cidx%3A1-1-1" onclick="ga('send', {'hitType': 'event', 'eventCategory': 'LinkedinLink', 'eventAction': 'ClickLinkedinLink', 'eventLabel': 'HomePgBottomNavLI' });"><i class="icon-linkedin"></i></a>
             <!--<a class="gplus" href="#"><i class="icon-google-plus"></i></a>

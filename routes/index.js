@@ -4,7 +4,7 @@ var async = require('async');
 /* GET home page. */
 router.get('/', function(req, res) {
 	var db = req.db;
-	var T = req.T;
+	//var T = req.T;
 	//db.connect();
 	//We will use async parallel to keep performance up. 
 	//What this is going to do is call each one of the functions, and then wait for them all to return
@@ -12,27 +12,28 @@ router.get('/', function(req, res) {
 	//mysql should be able to withstand the heat. 
 	async.parallel([
 	function(callback) {
-		query = "SELECT * FROM TopContent Where Type = 'Blog' and isDisplayed = 'YES' ORDER BY isDisplayed DESC";
+		query = "SELECT * FROM TopContent Where Type = 'Blog' and isDisplayed = 'YES' ORDER BY isDisplayed DESC, Rank";
 		getBlog(db,query,callback);
 	},	
 	function(callback) {
-		query = "SELECT * FROM TopContent Where Type = 'Pic' and isDisplayed = 'YES' ORDER BY isDisplayed DESC";
+		query = "SELECT * FROM TopContent Where Type = 'Pic' and isDisplayed = 'YES' ORDER BY isDisplayed DESC, Rank";
 		getPic(db,query,callback);
 	},
 	function(callback) {
-		query = "SELECT * FROM TopContent Where Type = 'Edu' and isDisplayed = 'YES' ORDER BY isDisplayed DESC";
+		query = "SELECT * FROM TopContent Where Type = 'Edu' and isDisplayed = 'YES' ORDER BY isDisplayed DESC, Rank";
 		getEdu(db,query,callback);
 	},
 		function(callback) {
-		query = "SELECT * FROM TopContent Where Type = 'Stories' and isDisplayed = 'YES' ORDER BY isDisplayed DESC";
+		query = "SELECT * FROM TopContent Where Type = 'Stories' and isDisplayed = 'YES' ORDER BY isDisplayed DESC, Rank";
 		getArticles(db,query,callback);
 	},
 		function(callback) {
-			T.get('favorites/list', { screen_name: 'NurseGrid', count: 1 }, function(err, data, response) {
+			//T.get('favorites/list', { screen_name: 'NurseGrid', count: 1 }, function(err, data, response) {
 			//console.log(data);
-			tweet = data;
+			//tweet = data;
 			callback();
-			});
+			//});
+			
 	}
 	], function(err) {
 		if(err) {
@@ -44,8 +45,8 @@ router.get('/', function(req, res) {
 			Brows : Brows,
 			Prow : Prow,
 			Arow : Arow,
-			Erow : Erow,
-			Tweet : tweet
+			Erow : Erow//,
+			//Tweet : tweet
 		});
 	});
 	//db.end();
@@ -62,19 +63,19 @@ router.get('/em', function(req,res) {
 		//mysql should be able to withstand the heat. 
 		async.parallel([
 		function(callback) {
-			query = "SELECT * FROM TopContent Where Type = 'Blog'  ORDER BY isDisplayed DESC";
+			query = "SELECT * FROM TopContent Where Type = 'Blog'  ORDER BY isDisplayed DESC, Rank";
 			getBlog(db,query,callback);
 		},	
 		function(callback) {
-			query = "SELECT * FROM TopContent Where Type = 'Pic'  ORDER BY isDisplayed DESC";
+			query = "SELECT * FROM TopContent Where Type = 'Pic'  ORDER BY isDisplayed DESC, Rank";
 			getPic(db,query,callback);
 		},
 			function(callback) {
-			query = "SELECT * FROM TopContent Where Type = 'Edu'  ORDER BY isDisplayed DESC";
+			query = "SELECT * FROM TopContent Where Type = 'Edu'  ORDER BY isDisplayed DESC, Rank";
 			getEdu(db,query,callback);
 		},
 			function(callback) {
-			query = "SELECT * FROM TopContent Where Type = 'Stories'  ORDER BY isDisplayed DESC";
+			query = "SELECT * FROM TopContent Where Type = 'Stories'  ORDER BY isDisplayed DESC, Rank";
 			getArticles(db,query,callback);
 		}
 		], function(err) {

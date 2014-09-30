@@ -37,6 +37,7 @@ var CFG_TWITTER 	= envConfig.Twitter;
 var port            = process.env.PORT || CFG_SERVER.port;
 // Set the directories of any JS or CSS files 
 app.use(express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname+'/public'));
 //Set up some routes, this will create webpages and keep our main code block clean
 var em = require('./routes/em'); 
 var routes = require('./routes/index');
@@ -56,19 +57,19 @@ var db = null;
 });
 //Tweet Tweet Motherfucker
 //Setup twitter for the tweet of the day
-var util = require('util');
+/*var util = require('util');
 var twit = require('twit');
 var T = new twit({
   consumer_key: CFG_TWITTER.consumer_key,
   consumer_secret: CFG_TWITTER.consumer_secret,
   access_token: CFG_TWITTER.access_token_key,
   access_token_secret: CFG_TWITTER.access_token_secret
-});
+});*/
 
 // Add the DB and Twitter accessibility into the router 
 app.use(function(req, res, next) {
 	req.db = db;
-	req.T = T;
+	//req.T = T;
 	next();
 });
 
